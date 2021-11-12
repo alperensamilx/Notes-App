@@ -1,6 +1,6 @@
 import {
-  BrowserRouter, 
-  Routes,
+  BrowserRouter as
+  Router,
   Route,
   
 } from "react-router-dom";
@@ -13,17 +13,17 @@ import NotePage from './pages/NotePage'
 
 function App() {    
   return (
-    <BrowserRouter>
+    <Router>
       <div className="container dark"> 
         <div className="app">
           <Header />
-          <Routes>
-            <Route path="/"  element={<NotesListPage />} />
-            <Route path="/note/:id"  element={<NotePage />} />
-          </Routes>
+         
+            <Route path="/"  component={NotesListPage} exact/>
+            <Route path="/note/:id"  component={NotePage} />
+         
         </div>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
